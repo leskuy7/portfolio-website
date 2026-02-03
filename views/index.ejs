@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <%- include('partials/head') %>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <%- include('partials/navbar') %>
+
+        <!-- Hero Section -->
+        <header id="home" class="hero d-flex align-items-center">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h1 class="display-4">Merhaba, Ben <br><span style="color: var(--accent-color);">Yüksel</span>
+                        </h1>
+                        <p class="lead">Full Stack Geliştirici & UI/UX Tasarımcı</p>
+                        <p class="mb-4">Modern web teknolojileri ile kullanıcı dostu ve estetik dijital deneyimler
+                            tasarlıyorum.</p>
+                        <a href="#portfolio" class="btn btn-primary btn-primary-custom me-2">Projelerimi Gör</a>
+                        <a href="#contact" class="btn btn-outline-light">İletişime Geç</a>
+                    </div>
+                    <div class="col-lg-6 text-center d-none d-lg-block">
+                        <!-- Placeholder for hero image -->
+                        <img src="https://placehold.co/600x400/png?text=Hero+Image" alt="Hero Image"
+                            class="img-fluid rounded-3 shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Hakkımda</h2>
+                    <p class="text-muted mt-2">Kariyer yolculuğum ve tutkularım</p>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-5">
+                        <img src="https://placehold.co/500x500/png?text=Profile+Image" alt="Profile"
+                            class="img-fluid profile-img mb-4 mb-lg-0">
+                    </div>
+                    <div class="col-lg-7 ps-lg-5">
+                        <h3>Yaratıcı Çözümler Üreten Bir Geliştiriciyim</h3>
+                        <p class="mt-4">
+                            4 yıldır web geliştirme alanında çalışıyorum. Node.js, React ve modern web teknolojileri
+                            konusunda uzmanlaştım. Karmaşık problemleri basit ve etkili kod yapılarıyla çözmekten keyif
+                            alıyorum.
+                        </p>
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Clean Code
+                                        Prensipleri</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Responsive
+                                        Tasarım</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> SEO
+                                        Optimizasyonu
+                                    </li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Cross-Browser
+                                        Uyumluluk</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="bg-white">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Uzmanlık Alanlarım</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fab fa-node-js"></i>
+                            </div>
+                            <h4>Backend Geliştirme</h4>
+                            <p class="text-muted">Node.js, Express, MongoDB ve SQL veritabanları ile güçlü altyapılar.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <h4>Frontend Geliştirme</h4>
+                            <p class="text-muted">React, HTML5, CSS3, Bootstrap ve Tailwind ile modern arayüzler.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h4>Mobil Uyumluluk</h4>
+                            <p class="text-muted">Her cihazda kusursuz çalışan responsive tasarımlar.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" style="background-color: var(--light-bg);">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Projelerim</h2>
+                    <p class="text-muted mt-2">Son zamanlarda üzerinde çalıştığım bazı işler</p>
+                </div>
+                <div class="row">
+                    <!-- Project 1 -->
+                    <div class="col-lg-4 col-md-6 portfolio-item">
+                        <div class="portfolio-card card h-100">
+                            <img src="https://placehold.co/600x400/png?text=E-Commerce"
+                                class="card-img-top portfolio-img" alt="Project 1">
+                            <div class="card-body">
+                                <h5 class="card-title">E-Ticaret Platformu</h5>
+                                <p class="card-text">MERN Stack kullanılarak geliştirilmiş, tam özellikli bir e-ticaret
+                                    uygulaması.</p>
+                                <span class="badge bg-secondary mt-3">Örnek Proje</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="col-lg-4 col-md-6 portfolio-item">
+                        <div class="portfolio-card card h-100">
+                            <img src="https://placehold.co/600x400/png?text=Task+App" class="card-img-top portfolio-img"
+                                alt="Project 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Görev Yönetim Uygulaması</h5>
+                                <p class="card-text">Takımların verimli çalışması için geliştirilmiş proje yönetim
+                                    aracı.
+                                </p>
+                                <span class="badge bg-secondary mt-3">Örnek Proje</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="col-lg-4 col-md-6 portfolio-item">
+                        <div class="portfolio-card card h-100">
+                            <img src="https://placehold.co/600x400/png?text=Blog+Site"
+                                class="card-img-top portfolio-img" alt="Project 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Kişisel Blog</h5>
+                                <p class="card-text">Next.js ve Markdown ile oluşturulmuş, yüksek performanslı blog
+                                    sitesi.
+                                </p>
+                                <span class="badge bg-secondary mt-3">Örnek Proje</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>İletişime Geç</h2>
+                    <p class="mt-2 text-white-50">Projeleriniz veya sorularınız için bana ulaşın</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <form class="contact-form" action="https://formspree.io/f/mvzqnbaz" method="POST">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" name="name" class="form-control" placeholder="Adınız Soyadınız"
+                                        required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="email" name="email" class="form-control"
+                                        placeholder="E-posta Adresiniz" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" name="subject" class="form-control" placeholder="Konu" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" name="message" rows="5" placeholder="Mesajınız"
+                                    required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-primary-custom px-5">
+                                    <i class="fas fa-paper-plane me-2"></i>Gönder
+                                </button>
+                            </div>
+                        </form>
+
+                        <div class="social-links text-center mt-5">
+                            <a href="https://linkedin.com/in/yüksel-yılmaz-7692511b7" target="_blank"
+                                class="text-white me-4 fs-4"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/leskuy7" target="_blank" class="text-white me-4 fs-4"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="https://instagram.com/yksel124" target="_blank" class="text-white fs-4"><i
+                                    class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <%- include('partials/footer') %>
+
+</body>
+
+</html>
