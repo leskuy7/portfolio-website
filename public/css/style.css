@@ -513,6 +513,12 @@ footer {
         transform: translateY(0);
     }
 
+    .navbar-collapse.show .nav-item:nth-child(7) {
+        transition-delay: 0.7s;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
     .nav-link {
         font-size: 1.5rem;
         font-weight: 700;

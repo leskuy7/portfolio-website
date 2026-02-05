@@ -120,9 +120,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close when clicking outside
     document.addEventListener('click', (e) => {
         if (navbarCollapse.classList.contains('show') &&
-            !navbarCollapse.contains(e.target) &&
             !navbarToggler.contains(e.target)) {
-            navbarToggler.click();
+            // Check if click is directly on the overlay background (not on nav items)
+            const navbarNav = document.querySelector('.navbar-nav');
+            if (!navbarNav.contains(e.target)) {
+                navbarToggler.click();
+            }
         }
     });
 });
