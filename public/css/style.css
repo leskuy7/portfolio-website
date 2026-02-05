@@ -425,13 +425,82 @@ footer {
     }
 
     .section-title h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Hero Section Mobile */
+    .hero {
+        padding: 120px 0 60px;
+        text-align: center;
+    }
+
+    .hero img {
+        margin-top: 30px;
+        max-width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    /* Cards on Mobile */
+    .skill-card,
+    .portfolio-card {
+        margin-bottom: 20px;
+    }
+
+    /* Contact Form */
+    .contact-form {
+        padding: 0 10px;
+    }
+
+    /* Portfolio Items */
+    .portfolio-item {
+        margin-bottom: 20px;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra Small Devices (phones, 576px and down) */
+@media (max-width: 576px) {
+    .hero h1 {
         font-size: 2rem;
     }
 
-    /* Hero Image Visibility on Mobile */
+    .hero p.lead {
+        font-size: 1rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.5rem;
+    }
+
+    .skill-card,
+    .portfolio-card {
+        padding: 20px;
+    }
+
     .hero img {
-        margin-top: 30px;
-        max-width: 80%;
+        max-width: 90%;
+    }
+
+    /* Stack buttons vertically on very small screens */
+    .hero .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .hero .btn:last-child {
+        margin-bottom: 0;
     }
 }
 
@@ -513,10 +582,9 @@ footer {
         transform: translateY(0);
     }
 
-    .navbar-collapse.show .nav-item:nth-child(7) {
-        transition-delay: 0.7s;
-        opacity: 1;
-        transform: translateY(0);
+    /* Mobile Button Group Styling */
+    .navbar-collapse.show .nav-item.d-flex {
+        justify-content: center;
     }
 
     .nav-link {
