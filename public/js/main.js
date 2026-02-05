@@ -103,5 +103,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
 
+    // ===== CLOSE NAVBAR ON CLICK OUTSIDE OR NAV LINK =====
+    const navbarCollapse = document.getElementById('navbarNav');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+
+    // Close when clicking a nav link
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navbarCollapse.classList.contains('show')) {
+                navbarToggler.click();
+            }
+        });
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navbarCollapse.classList.contains('show') &&
+            !navbarCollapse.contains(e.target) &&
+            !navbarToggler.contains(e.target)) {
+            navbarToggler.click();
+        }
+    });
+});
