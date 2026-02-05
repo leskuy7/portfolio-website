@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // ===== THEME TOGGLE =====
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeIcon = themeToggleBtn.querySelector('i');
 
@@ -34,4 +35,73 @@ document.addEventListener('DOMContentLoaded', () => {
             updateIcon('dark');
         }
     });
+
+    // ===== AOS ANIMATION INIT =====
+    AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 50
+    });
+
+    // ===== LOADING ANIMATION =====
+    const loadingOverlay = document.getElementById('loading-overlay');
+    if (loadingOverlay) {
+        // Hide loading after page is fully loaded
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                loadingOverlay.classList.add('hidden');
+            }, 500);
+        });
+    }
+
+    // ===== SCROLL TO TOP =====
+    const scrollTopBtn = document.getElementById('scroll-top');
+
+    if (scrollTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // ===== LANGUAGE TOGGLE =====
+    const langToggleBtn = document.getElementById('lang-toggle');
+
+    if (langToggleBtn) {
+        // Set initial language
+        const savedLang = getSavedLanguage();
+        setLanguage(savedLang);
+
+        langToggleBtn.addEventListener('click', () => {
+            const currentLang = localStorage.getItem('language') || 'tr';
+            const newLang = currentLang === 'tr' ? 'en' : 'tr';
+            setLanguage(newLang);
+        });
+    }
+
+    // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
 });
+
