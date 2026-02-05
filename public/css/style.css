@@ -504,6 +504,29 @@ footer {
     }
 }
 
+/* iPhone 11 / iPhone XR (414px width) */
+@media (min-width: 400px) and (max-width: 430px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    /* Buttons side by side on iPhone 11 */
+    .hero .btn {
+        display: inline-block;
+        width: auto;
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+
+    .hero .btn:last-child {
+        margin-right: 0;
+    }
+
+    .hero img {
+        max-width: 80%;
+    }
+}
+
 /* ===== FULLSCREEN MOBILE MENU OVERLAY ===== */
 @media (max-width: 991px) {
     .navbar-collapse {
