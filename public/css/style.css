@@ -358,8 +358,231 @@ footer {
     color: var(--text-light);
 }
 
+/* ===== PREMIUM UI TOUCHES ===== */
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+/* Text Selection */
+::selection {
+    background: var(--accent-color);
+    color: white;
+}
+
+/* Gradient Text Effect for Name */
+.text-gradient {
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* Button Glow Effect */
+.btn-primary-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(228, 63, 90, 0.6);
+    background-color: #d02e48;
+}
+
+/* Card Hover Premium Effect */
+.portfolio-card:hover,
+.skill-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .portfolio-card:hover,
+[data-theme="dark"] .skill-card:hover {
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.08);
+}
+
+/* ===== MOBILE & RESPONSIVE IMPROVEMENTS ===== */
+
+/* Mobile Typography */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p.lead {
+        font-size: 1.1rem;
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    /* Hero Image Visibility on Mobile */
+    .hero img {
+        margin-top: 30px;
+        max-width: 80%;
+    }
+}
+
+/* ===== FULLSCREEN MOBILE MENU OVERLAY ===== */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.98);
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+        backdrop-filter: blur(10px);
+    }
+
+    [data-theme="dark"] .navbar-collapse {
+        background: rgba(18, 18, 18, 0.98);
+    }
+
+    .navbar-collapse.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navbar-nav {
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-item {
+        margin: 15px 0;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.4s ease;
+    }
+
+    /* Staggered animation for links */
+    .navbar-collapse.show .nav-item:nth-child(1) {
+        transition-delay: 0.1s;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .navbar-collapse.show .nav-item:nth-child(2) {
+        transition-delay: 0.2s;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .navbar-collapse.show .nav-item:nth-child(3) {
+        transition-delay: 0.3s;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .navbar-collapse.show .nav-item:nth-child(4) {
+        transition-delay: 0.4s;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .navbar-collapse.show .nav-item:nth-child(5) {
+        transition-delay: 0.5s;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .navbar-collapse.show .nav-item:nth-child(6) {
+        transition-delay: 0.6s;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-link {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    /* Hamburger Button Animation */
+    .navbar-toggler {
+        z-index: 1000;
+        border: none;
+        outline: none;
+        box-shadow: none !important;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        position: relative;
+    }
+
+    .navbar-toggler-icon {
+        background-image: none !important;
+        width: 100%;
+        height: 2px;
+        background-color: var(--text-color);
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        transition: all 0.3s ease;
+    }
+
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: var(--text-color);
+        transition: all 0.3s ease;
+        left: 0;
+    }
+
+    .navbar-toggler-icon::before {
+        top: -8px;
+    }
+
+    .navbar-toggler-icon::after {
+        top: 8px;
+    }
+
+    /* Toggle State */
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+        background-color: transparent;
+    }
+
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+}
+
 /* ===== PERFORMANCE OPTIMIZATIONS ===== */
-.hero, .skill-card, .portfolio-card, .scroll-top-btn {
+.hero,
+.skill-card,
+.portfolio-card,
+.scroll-top-btn {
     will-change: transform;
 }
 
