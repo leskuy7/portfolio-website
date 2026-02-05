@@ -510,21 +510,44 @@ footer {
         font-size: 2.2rem;
     }
 
-    /* Buttons side by side on iPhone 11 */
     .hero .btn {
         display: inline-block;
         width: auto;
+        flex: 1;
+        /* Make buttons equal width */
+        padding: 12px 10px;
+        /* Adjust padding for smaller screens */
         margin-right: 10px;
         margin-bottom: 0;
+        white-space: nowrap;
+        /* Prevent text wrapping */
+    }
+
+    /* Wrap buttons in a flex container for equal sizing */
+    .hero .d-flex-mobile {
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
 
     .hero .btn:last-child {
         margin-right: 0;
     }
+}
 
-    .hero img {
-        max-width: 80%;
+/* Ensure Navbar is always visible on mobile/tablet */
+@media (max-width: 991px) {
+    .navbar {
+        background: rgba(255, 255, 255, 0.98) !important;
     }
+
+    [data-theme="dark"] .navbar {
+        background: rgba(18, 18, 18, 0.98) !important;
+    }
+}
+
+.hero img {
+    max-width: 80%;
 }
 
 /* ===== FULLSCREEN MOBILE MENU OVERLAY ===== */
