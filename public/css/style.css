@@ -442,6 +442,33 @@ footer {
         display: block;
     }
 
+    /* Mobile Buttons: Always side-by-side and equal width */
+    .hero .d-flex-mobile {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .hero .btn {
+        flex: 1;
+        width: auto;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 5px;
+        margin: 0 !important;
+        /* Reset margins as we use gap */
+        white-space: nowrap;
+        font-size: 0.95rem;
+    }
+
+    /* Remove old button margins since we use gap now */
+    .hero .btn:last-child {
+        margin-bottom: 0;
+    }
+
     /* Cards on Mobile */
     .skill-card,
     .portfolio-card {
@@ -491,17 +518,6 @@ footer {
     .hero img {
         max-width: 90%;
     }
-
-    /* Stack buttons vertically on very small screens */
-    .hero .btn {
-        display: block;
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .hero .btn:last-child {
-        margin-bottom: 0;
-    }
 }
 
 /* iPhone 11 / iPhone XR (414px width) */
@@ -510,28 +526,8 @@ footer {
         font-size: 2.2rem;
     }
 
-    .hero .btn {
-        display: inline-block;
-        width: auto;
-        flex: 1;
-        /* Make buttons equal width */
-        padding: 12px 10px;
-        /* Adjust padding for smaller screens */
-        margin-right: 10px;
-        margin-bottom: 0;
-        white-space: nowrap;
-        /* Prevent text wrapping */
-    }
-
-    /* Wrap buttons in a flex container for equal sizing */
-    .hero .d-flex-mobile {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .hero .btn:last-child {
-        margin-right: 0;
+    .hero img {
+        max-width: 80%;
     }
 }
 
