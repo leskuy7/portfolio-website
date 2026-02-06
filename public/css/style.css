@@ -624,27 +624,31 @@ footer {
     .navbar-toggler {
         display: flex !important;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: center;
+        align-items: center;
         width: 44px;
         height: 44px;
-        padding: 8px;
-        border: none;
-        background: transparent;
+        padding: 10px;
+        border: none !important;
+        background: transparent !important;
         z-index: 1001;
+        gap: 5px;
     }
 
     .navbar-toggler:focus {
-        box-shadow: none;
-        outline: none;
+        box-shadow: none !important;
+        outline: none !important;
     }
 
+    /* Hide Bootstrap's default background-image icon */
     .navbar-toggler-icon {
-        display: block;
-        width: 100%;
+        background-image: none !important;
+        width: 24px;
         height: 3px;
         background-color: var(--text-color) !important;
         border-radius: 2px;
         position: relative;
+        display: block !important;
         transition: all 0.3s ease;
     }
 
@@ -652,20 +656,20 @@ footer {
     .navbar-toggler-icon::after {
         content: '';
         position: absolute;
-        width: 100%;
+        width: 24px;
         height: 3px;
-        background-color: var(--text-color);
+        background-color: var(--text-color) !important;
         border-radius: 2px;
         left: 0;
         transition: all 0.3s ease;
     }
 
     .navbar-toggler-icon::before {
-        top: -10px;
+        top: -8px;
     }
 
     .navbar-toggler-icon::after {
-        top: 10px;
+        top: 8px;
     }
 
     /* Dark mode hamburger */
