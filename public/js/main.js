@@ -112,9 +112,36 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
             if (navbarCollapse.classList.contains('show')) {
-                navbarToggler.click();
+                // Use Bootstrap's collapse API for smoother close
+                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                if (bsCollapse) {
+                    bsCollapse.hide();
+                } else {
+                    navbarToggler.click();
+                }
             }
         });
+    });
+
+    // Close menu when clicking theme or language toggle (on mobile)
+    const themeToggle = document.getElementById('theme-toggle');
+    const langToggle = document.getElementById('lang-toggle');
+
+    [themeToggle, langToggle].forEach(btn => {
+        if (btn) {
+            btn.addEventListener('click', () => {
+                if (window.innerWidth <= 991 && navbarCollapse.classList.contains('show')) {
+                    setTimeout(() => {
+                        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                        if (bsCollapse) {
+                            bsCollapse.hide();
+                        } else {
+                            navbarToggler.click();
+                        }
+                    }, 200); // Small delay to let the action complete first
+                }
+            });
+        }
     });
 
     // Close when clicking outside

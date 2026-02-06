@@ -9,10 +9,6 @@ app.set('views', path.join(__dirname, 'views'));
 
 // Static Files 'Markdown', 'GraphQL', 'Vercel'
 app.use(express.static(path.join(__dirname, 'public')));
-// Make bootstrap available if installed via npm, otherwise we might rely on CDN in the view.
-// Since npm install failed, I will use CDN in the views for reliability.
-app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
-app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')));
 
 // Project Data
 const projects = {
@@ -21,14 +17,14 @@ const projects = {
         subtitle: 'Modern ve Ölçeklenebilir Alışveriş Deneyimi',
         description: 'MERN (MongoDB, Express, React, Node.js) yığını kullanılarak geliştirilen bu kapsamlı e-ticaret çözümü, kullanıcı dostu arayüzü ve güçlü yönetim paneli ile öne çıkıyor. Gerçek zamanlı stok takibi, güvenli ödeme sistemleri entegrasyonu ve gelişmiş arama özellikleri barındırıyor.',
         image: 'https://placehold.co/1200x600/png?text=E-Commerce+Project',
-        technologies: ['React', 'Node.js', 'MongoDB']
+        technologies: ['React', 'Node.js', 'MongoDB', 'Redux', 'Stripe API']
     },
     '2': {
         title: 'Görev Yönetim Uygulaması',
         subtitle: 'Takım İşbirliğini Artıran Çözüm',
         description: 'Kurumsal takımlar için geliştirilen bu proje yönetim aracı, görev atama, sürükle-bırak panolar (Kanban), ve detaylı raporlama özellikleri sunuyor. Socket.io ile anlık bildirimler ve güncellemeler sağlanıyor.',
         image: 'https://placehold.co/1200x600/png?text=Task+App+Project',
-        technologies: ['']
+        technologies: ['Node.js', 'Express', 'Socket.io', 'PostgreSQL', 'EJS']
     },
     '3': {
         title: 'Kişisel Blog',

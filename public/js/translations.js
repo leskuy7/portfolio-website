@@ -7,7 +7,7 @@ const translations = {
         navSkills: 'Yetenekler',
         navProjects: 'Projeler',
         navContact: 'İletişim',
-        
+
         // Hero Section
         heroGreeting: 'Merhaba, Ben',
         heroName: 'Yüksel',
@@ -15,7 +15,7 @@ const translations = {
         heroDesc: 'Modern web teknolojileri ile kullanıcı dostu ve estetik dijital deneyimler tasarlıyorum.',
         heroBtn1: 'Projelerimi Gör',
         heroBtn2: 'İletişime Geç',
-        
+
         // About Section
         aboutTitle: 'Hakkımda',
         aboutSubtitle: 'Kariyer yolculuğum ve tutkularım',
@@ -25,7 +25,7 @@ const translations = {
         aboutSkill2: 'Responsive Tasarım',
         aboutSkill3: 'SEO Optimizasyonu',
         aboutSkill4: 'Cross-Browser Uyumluluk',
-        
+
         // Skills Section
         skillsTitle: 'Uzmanlık Alanlarım',
         skillBackend: 'Backend Geliştirme',
@@ -34,7 +34,7 @@ const translations = {
         skillFrontendDesc: 'React, HTML5, CSS3, Bootstrap ve Tailwind ile modern arayüzler.',
         skillMobile: 'Mobil Uyumluluk',
         skillMobileDesc: 'Her cihazda kusursuz çalışan responsive tasarımlar.',
-        
+
         // Portfolio Section
         portfolioTitle: 'Projelerim',
         portfolioSubtitle: 'Son zamanlarda üzerinde çalıştığım bazı işler',
@@ -45,7 +45,7 @@ const translations = {
         project3Title: 'Kişisel Blog',
         project3Desc: 'Next.js ve Markdown ile oluşturulmuş, yüksek performanslı blog sitesi.',
         sampleProject: 'Örnek Proje',
-        
+
         // Contact Section
         contactTitle: 'İletişime Geç',
         contactSubtitle: 'Projeleriniz veya sorularınız için bana ulaşın',
@@ -54,9 +54,18 @@ const translations = {
         contactSubject: 'Konu',
         contactMessage: 'Mesajınız',
         contactBtn: 'Gönder',
-        
+
         // Footer
-        footer: '© 2026 Tüm Hakları Saklıdır | Yüksel Yılmaz'
+        footer: '© 2026 Tüm Hakları Saklıdır | Yüksel Yılmaz',
+
+        // Project Detail Page
+        projDetailAbout: 'Proje Hakkında',
+        projDetailTech: 'Kullanılan Teknolojiler',
+        projDetailFeatures: 'Proje Özellikleri',
+        projDetailDate: 'Tarih',
+        projDetailRole: 'Rol',
+        projDetailLive: 'Canlı Önizleme',
+        projDetailBack: 'Ana Sayfaya Dön'
     },
     en: {
         // Navbar
@@ -65,7 +74,7 @@ const translations = {
         navSkills: 'Skills',
         navProjects: 'Projects',
         navContact: 'Contact',
-        
+
         // Hero Section
         heroGreeting: 'Hello, I\'m',
         heroName: 'Yüksel',
@@ -73,7 +82,7 @@ const translations = {
         heroDesc: 'I design user-friendly and aesthetic digital experiences with modern web technologies.',
         heroBtn1: 'View My Projects',
         heroBtn2: 'Get In Touch',
-        
+
         // About Section
         aboutTitle: 'About Me',
         aboutSubtitle: 'My career journey and passions',
@@ -83,7 +92,7 @@ const translations = {
         aboutSkill2: 'Responsive Design',
         aboutSkill3: 'SEO Optimization',
         aboutSkill4: 'Cross-Browser Compatibility',
-        
+
         // Skills Section
         skillsTitle: 'My Expertise',
         skillBackend: 'Backend Development',
@@ -92,7 +101,7 @@ const translations = {
         skillFrontendDesc: 'Modern interfaces with React, HTML5, CSS3, Bootstrap and Tailwind.',
         skillMobile: 'Mobile Compatibility',
         skillMobileDesc: 'Responsive designs that work flawlessly on every device.',
-        
+
         // Portfolio Section
         portfolioTitle: 'My Projects',
         portfolioSubtitle: 'Some of the recent work I\'ve been doing',
@@ -103,7 +112,7 @@ const translations = {
         project3Title: 'Personal Blog',
         project3Desc: 'High-performance blog site built with Next.js and Markdown.',
         sampleProject: 'Sample Project',
-        
+
         // Contact Section
         contactTitle: 'Get In Touch',
         contactSubtitle: 'Reach out to me for your projects or questions',
@@ -112,9 +121,18 @@ const translations = {
         contactSubject: 'Subject',
         contactMessage: 'Your Message',
         contactBtn: 'Send',
-        
+
         // Footer
-        footer: '© 2026 All Rights Reserved | Yüksel Yılmaz'
+        footer: '© 2026 All Rights Reserved | Yüksel Yılmaz',
+
+        // Project Detail Page
+        projDetailAbout: 'About Project',
+        projDetailTech: 'Technologies Used',
+        projDetailFeatures: 'Project Features',
+        projDetailDate: 'Date',
+        projDetailRole: 'Role',
+        projDetailLive: 'Live Preview',
+        projDetailBack: 'Back to Home'
     }
 };
 
@@ -122,7 +140,7 @@ const translations = {
 function setLanguage(lang) {
     localStorage.setItem('language', lang);
     const elements = document.querySelectorAll('[data-translate]');
-    
+
     elements.forEach(el => {
         const key = el.getAttribute('data-translate');
         if (translations[lang] && translations[lang][key]) {
@@ -133,7 +151,7 @@ function setLanguage(lang) {
             }
         }
     });
-    
+
     // Update language toggle button
     const langBtn = document.getElementById('lang-toggle');
     if (langBtn) {
