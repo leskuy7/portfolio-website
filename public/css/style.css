@@ -500,6 +500,20 @@ footer {
         gap: 0;
     }
 
+    /* Fix About Section List Gap on Mobile */
+    #about .col-md-6 {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    #about .col-md-6 ul {
+        margin-bottom: 0 !important;
+    }
+
+    #about .row.mt-4 {
+        gap: 0;
+    }
+
     /* Cards on Mobile */
     .portfolio-card {
         margin-bottom: 20px;
