@@ -65,7 +65,13 @@ const translations = {
         projDetailDate: 'Tarih',
         projDetailRole: 'Rol',
         projDetailLive: 'Canlı Önizleme',
-        projDetailBack: 'Ana Sayfaya Dön'
+        projDetailBack: 'Ana Sayfaya Dön',
+
+        // 404 Page
+        error404Title: 'Sayfa Bulunamadı',
+        error404Message: 'Aradığınız sayfa taşınmış, silinmiş veya hiç var olmamış olabilir. Endişelenmeyin, ana sayfaya dönebilirsiniz.',
+        error404Home: 'Ana Sayfaya Dön',
+        error404Back: 'Geri Git'
     },
     en: {
         // Navbar
@@ -132,7 +138,13 @@ const translations = {
         projDetailDate: 'Date',
         projDetailRole: 'Role',
         projDetailLive: 'Live Preview',
-        projDetailBack: 'Back to Home'
+        projDetailBack: 'Back to Home',
+
+        // 404 Page
+        error404Title: 'Page Not Found',
+        error404Message: 'The page you are looking for might have been moved, deleted, or never existed. Don\'t worry, you can go back home.',
+        error404Home: 'Go to Home',
+        error404Back: 'Go Back'
     }
 };
 

@@ -50,8 +50,13 @@ app.get('/project/:id', (req, res) => {
             project: project
         });
     } else {
-        res.status(404).send('Proje bulunamadı');
+        res.status(404).render('404');
     }
+});
+
+// 404 - Catch all unmatched routes
+app.use((req, res) => {
+    res.status(404).render('404');
 });
 
 app.listen(port, () => {
