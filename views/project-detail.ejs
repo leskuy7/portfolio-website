@@ -57,9 +57,22 @@
                                     <li class="list-group-item"><i class="fas fa-user text-primary me-2"></i> <span
                                             data-translate="projDetailRole">Rol</span>: Full
                                         Stack Geliştirici</li>
-                                    <li class="list-group-item"><i class="fas fa-link text-primary me-2"></i> <a
-                                            href="#" class="text-decoration-none" data-translate="projDetailLive">Canlı
-                                            Önizleme</a></li>
+
+                                    <% if (project.liveUrl) { %>
+                                        <li class="list-group-item"><i class="fas fa-link text-primary me-2"></i> <a
+                                                href="<%= project.liveUrl %>" target="_blank"
+                                                class="text-decoration-none" data-translate="projDetailLive">Canlı
+                                                Önizleme</a></li>
+                                        <% } %>
+
+                                            <% if (project.githubUrl) { %>
+                                                <li class="list-group-item"><i
+                                                        class="fab fa-github text-primary me-2"></i> <a
+                                                        href="<%= project.githubUrl %>" target="_blank"
+                                                        class="text-decoration-none"
+                                                        data-translate="projDetailGithub">GitHub
+                                                        Reposu</a></li>
+                                                <% } %>
                                 </ul>
                             </div>
                         </div>

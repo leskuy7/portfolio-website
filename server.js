@@ -32,6 +32,15 @@ const projects = {
         description: 'Next.js ve Static Site Generation (SSG) teknikleri kullanılarak hazırlanan bu blog, ultra hızlı sayfa yükleme süreleri ve mükemmel SEO performansı sunuyor. İçerikler Markdown dosyaları üzerinden kolayca yönetilebiliyor.',
         image: 'https://placehold.co/1200x600/png?text=Blog+Project',
         technologies: ['Next.js']
+    },
+    '4': {
+        title: 'Market Stok Takip Sistemi',
+        subtitle: 'Kapsamlı Stok ve Satış Yönetim Paneli',
+        description: 'Marketler için özel olarak geliştirilmiş bu web tabanlı uygulama, anlık stok takibi, barkodlu satış sistemi, detaylı raporlama ve kullanıcı yetkilendirme özellikleri sunar. Responsive tasarımı ve PWA desteği sayesinde hem masaüstü hem de mobil cihazlarda sorunsuz çalışır.',
+        image: 'https://placehold.co/1200x600/png?text=Market+Stok+Takip',
+        technologies: ['Node.js', 'Express', 'MongoDB', 'JWT', 'HTML/CSS', 'PWA'],
+        liveUrl: 'https://market-i8nk.onrender.com/',
+        githubUrl: 'https://github.com/leskuy7/market'
     }
 };
 

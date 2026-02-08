@@ -44,6 +44,8 @@ const translations = {
         project2Desc: 'Takımların verimli çalışması için geliştirilmiş proje yönetim aracı.',
         project3Title: 'Kişisel Blog',
         project3Desc: 'Next.js ve Markdown ile oluşturulmuş, yüksek performanslı blog sitesi.',
+        project4Title: 'Market Stok Takip',
+        project4Desc: 'Anlık stok takibi, satış yönetimi ve raporlama özellikleri sunan kapsamlı market yönetim paneli.',
         sampleProject: 'Örnek Proje',
 
         // Contact Section
@@ -65,6 +67,7 @@ const translations = {
         projDetailDate: 'Tarih',
         projDetailRole: 'Rol',
         projDetailLive: 'Canlı Önizleme',
+        projDetailGithub: 'GitHub Reposu',
         projDetailBack: 'Ana Sayfaya Dön',
 
         // 404 Page
@@ -117,6 +120,8 @@ const translations = {
         project2Desc: 'Project management tool developed for teams to work efficiently.',
         project3Title: 'Personal Blog',
         project3Desc: 'High-performance blog site built with Next.js and Markdown.',
+        project4Title: 'Market Stock Tracking',
+        project4Desc: 'Comprehensive market management panel offering instant stock tracking, sales management, and reporting features.',
         sampleProject: 'Sample Project',
 
         // Contact Section
@@ -138,6 +143,7 @@ const translations = {
         projDetailDate: 'Date',
         projDetailRole: 'Role',
         projDetailLive: 'Live Preview',
+        projDetailGithub: 'GitHub Repo',
         projDetailBack: 'Back to Home',
 
         // 404 Page
