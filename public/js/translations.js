@@ -38,15 +38,12 @@ const translations = {
         // Portfolio Section
         portfolioTitle: 'Projelerim',
         portfolioSubtitle: 'Son zamanlarda üzerinde çalıştığım bazı işler',
-        project1Title: 'E-Ticaret Platformu',
-        project1Desc: 'MERN Stack kullanılarak geliştirilmiş, tam özellikli bir e-ticaret uygulaması.',
-        project2Title: 'Görev Yönetim Uygulaması',
-        project2Desc: 'Takımların verimli çalışması için geliştirilmiş proje yönetim aracı.',
-        project3Title: 'Kişisel Blog',
-        project3Desc: 'Next.js ve Markdown ile oluşturulmuş, yüksek performanslı blog sitesi.',
-        project4Title: 'Market Stok Takip',
-        project4Desc: 'Anlık stok takibi, satış yönetimi ve raporlama özellikleri sunan kapsamlı market yönetim paneli.',
+        project1Title: 'Market Stok Takip Sistemi',
+        project1Desc: 'Anlık stok takibi, satış yönetimi ve raporlama özellikleri sunan kapsamlı market yönetim paneli.',
+        project2Title: 'Abonelik Takip Sistemi',
+        project2Desc: 'Tüm dijital aboneliklerinizi yönetin, harcamalarınızı takip edin ve yaklaşan ödemelerden haberdar olun.',
         sampleProject: 'Örnek Proje',
+
 
         // Contact Section
         contactTitle: 'İletişime Geç',
@@ -114,15 +111,12 @@ const translations = {
         // Portfolio Section
         portfolioTitle: 'My Projects',
         portfolioSubtitle: 'Some of the recent work I\'ve been doing',
-        project1Title: 'E-Commerce Platform',
-        project1Desc: 'A fully-featured e-commerce application developed using MERN Stack.',
-        project2Title: 'Task Management App',
-        project2Desc: 'Project management tool developed for teams to work efficiently.',
-        project3Title: 'Personal Blog',
-        project3Desc: 'High-performance blog site built with Next.js and Markdown.',
-        project4Title: 'Market Stock Tracking',
-        project4Desc: 'Comprehensive market management panel offering instant stock tracking, sales management, and reporting features.',
+        project1Title: 'Market Stock Tracking',
+        project1Desc: 'Comprehensive market management panel offering instant stock tracking, sales management, and reporting features.',
+        project2Title: 'Subscription Tracking System',
+        project2Desc: 'Manage all your digital subscriptions, track expenses, and get notified about upcoming payments.',
         sampleProject: 'Sample Project',
+
 
         // Contact Section
         contactTitle: 'Get In Touch',

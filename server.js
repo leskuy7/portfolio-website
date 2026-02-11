@@ -13,27 +13,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Project Data
 const projects = {
     '1': {
-        title: 'E-Ticaret Platformu',
-        subtitle: 'Modern ve Ölçeklenebilir Alışveriş Deneyimi',
-        description: 'MERN (MongoDB, Express, React, Node.js) yığını kullanılarak geliştirilen bu kapsamlı e-ticaret çözümü, kullanıcı dostu arayüzü ve güçlü yönetim paneli ile öne çıkıyor. Gerçek zamanlı stok takibi, güvenli ödeme sistemleri entegrasyonu ve gelişmiş arama özellikleri barındırıyor.',
-        image: 'https://placehold.co/1200x600/png?text=E-Commerce+Project',
-        technologies: ['React', 'Node.js', 'MongoDB', 'Redux', 'Stripe API']
-    },
-    '2': {
-        title: 'Görev Yönetim Uygulaması',
-        subtitle: 'Takım İşbirliğini Artıran Çözüm',
-        description: 'Kurumsal takımlar için geliştirilen bu proje yönetim aracı, görev atama, sürükle-bırak panolar (Kanban), ve detaylı raporlama özellikleri sunuyor. Socket.io ile anlık bildirimler ve güncellemeler sağlanıyor.',
-        image: 'https://placehold.co/1200x600/png?text=Task+App+Project',
-        technologies: ['Node.js', 'Express', 'Socket.io', 'PostgreSQL', 'EJS']
-    },
-    '3': {
-        title: 'Kişisel Blog',
-        subtitle: 'Hızlı ve SEO Dostu İçerik Platformu',
-        description: 'Next.js ve Static Site Generation (SSG) teknikleri kullanılarak hazırlanan bu blog, ultra hızlı sayfa yükleme süreleri ve mükemmel SEO performansı sunuyor. İçerikler Markdown dosyaları üzerinden kolayca yönetilebiliyor.',
-        image: 'https://placehold.co/1200x600/png?text=Blog+Project',
-        technologies: ['Next.js']
-    },
-    '4': {
         title: 'Market Stok Takip Sistemi',
         subtitle: 'Kapsamlı Stok ve Satış Yönetim Paneli',
         description: 'Marketler için özel olarak geliştirilmiş bu web tabanlı uygulama, anlık stok takibi, barkodlu satış sistemi, detaylı raporlama ve kullanıcı yetkilendirme özellikleri sunar. Responsive tasarımı ve PWA desteği sayesinde hem masaüstü hem de mobil cihazlarda sorunsuz çalışır.',
@@ -41,6 +20,14 @@ const projects = {
         technologies: ['Node.js', 'Express', 'MongoDB', 'JWT', 'HTML/CSS', 'PWA'],
         liveUrl: 'https://market-i8nk.onrender.com/',
         githubUrl: 'https://github.com/leskuy7/market'
+    },
+    '2': {
+        title: 'Abonelik Takip Sistemi',
+        subtitle: 'Kisel Abonelik ve Harcama Yönetimi',
+        description: 'Tüm dijital aboneliklerinizi tek bir yerden yönetmenizi sağlayan modern bir web uygulaması. Ödeme tarihleri, harcama analizleri ve e-posta bildirimleri ile bütçenizi kontrol altında tutun. Güvenli kimlik doğrulama ve kullanıcı dostu arayüz sunar.',
+        image: 'https://placehold.co/1200x600/png?text=Abonelik+Takip',
+        technologies: ['Node.js', 'Express', 'PostgreSQL', 'Prisma', 'JWT', 'React'],
+        githubUrl: 'https://github.com/leskuy7/abonelik'
     }
 };
 
