@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cookieParser = require('cookie-parser');
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 const path = require('path');
 
 const translations = require('./data/translations');
@@ -78,23 +78,8 @@ app.get('/project/:id', (req, res) => {
     }
 });
 
-// ===== İletişim Formu (Nodemailer) =====
-const smtpPort = Number(process.env.SMTP_PORT) || 465;
-const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST || 'smtp.gmail.com',
-    port: smtpPort,
-    secure: smtpPort === 465,
-    auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS
-    },
-    connectionTimeout: 10000,
-    greetingTimeout: 10000,
-    socketTimeout: 15000,
-    tls: {
-        rejectUnauthorized: false
-    }
-});
+// ===== İletişim Formu (Resend) =====
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 app.post('/contact', async (req, res) => {
     const { name, email, subject, message } = req.body;
@@ -102,21 +87,26 @@ app.post('/contact', async (req, res) => {
         return res.status(400).json({ success: false, error: 'Tüm alanlar zorunludur.' });
     }
     try {
-        await transporter.sendMail({
-            from: `"${name}" <${process.env.SMTP_USER}>`,
+        const { data, error } = await resend.emails.send({
+            from: 'Portfolio Contact <onboarding@resend.dev>', // Resend'in test domaini
+            to: process.env.CONTACT_TO || 'yksel124@gmail.com', // Kendi e-posta adresiniz
             replyTo: email,
-            to: process.env.CONTACT_TO || process.env.SMTP_USER,
             subject: `Portfolio İletişim: ${subject}`,
-            text: `Ad: ${name}\nE-posta: ${email}\nKonu: ${subject}\n\n${message}`,
             html: `<h3>Portfolio İletişim Formu</h3>
                    <p><strong>Ad:</strong> ${name}</p>
                    <p><strong>E-posta:</strong> ${email}</p>
                    <p><strong>Konu:</strong> ${subject}</p>
                    <hr><p>${message.replace(/\n/g, '<br>')}</p>`
         });
+
+        if (error) {
+            console.error('Resend API hatası:', error);
+            return res.status(500).json({ success: false, error: `E-posta gönderilemedi: ${error.message}` });
+        }
+
         res.json({ success: true });
     } catch (err) {
-        console.error('Mail gönderim hatası:', err.message, err.code, err.response);
+        console.error('Mail gönderim hatası:', err.message);
         res.status(500).json({ success: false, error: `E-posta gönderilemedi: ${err.message}` });
     }
 });
@@ -142,7 +132,6 @@ app.use((req, res) => {
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
-    console.log(`SMTP_USER: ${process.env.SMTP_USER ? '✓ set' : '✗ MISSING'}`);
-    console.log(`SMTP_PASS: ${process.env.SMTP_PASS ? '✓ set' : '✗ MISSING'}`);
+    console.log(`RESEND_API_KEY: ${process.env.RESEND_API_KEY ? '✓ set' : '✗ MISSING'}`);
     console.log(`CONTACT_TO: ${process.env.CONTACT_TO ? '✓ set' : '✗ MISSING'}`);
 });
