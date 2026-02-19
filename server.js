@@ -95,7 +95,7 @@ app.post('/contact', async (req, res) => {
     try {
         const { data, error } = await resend.emails.send({
             from: 'Portfolio Contact <onboarding@resend.dev>', // Resend'in test domaini
-            to: process.env.CONTACT_TO || 'yksel124@gmail.com', // Kendi e-posta adresiniz
+            to: process.env.CONTACT_TO || 'leskuyy7@gmail.com', // Kendi e-posta adresiniz
             replyTo: email,
             subject: `Portfolio İletişim: ${subject}`,
             html: `<h3>Portfolio İletişim Formu</h3>
