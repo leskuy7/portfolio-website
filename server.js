@@ -79,13 +79,19 @@ app.get('/project/:id', (req, res) => {
 });
 
 // ===== İletişim Formu (Resend) =====
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 app.post('/contact', async (req, res) => {
     const { name, email, subject, message } = req.body;
     if (!name || !email || !subject || !message) {
         return res.status(400).json({ success: false, error: 'Tüm alanlar zorunludur.' });
     }
+
+    if (!resend) {
+        console.error('Resend API key is missing.');
+        return res.status(500).json({ success: false, error: 'E-posta servisi yapılandırılmamış.' });
+    }
+
     try {
         const { data, error } = await resend.emails.send({
             from: 'Portfolio Contact <onboarding@resend.dev>', // Resend'in test domaini
