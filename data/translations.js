@@ -1,5 +1,5 @@
-// Translations object for TR/EN language support
-const translations = {
+// Server-side translations for TR/EN language support
+module.exports = {
     tr: {
         // Navbar
         navHome: 'Ana Sayfa',
@@ -42,8 +42,12 @@ const translations = {
         project1Desc: 'Anlık stok takibi, satış yönetimi ve raporlama özellikleri sunan kapsamlı market yönetim paneli.',
         project2Title: 'Abonelik Takip Sistemi',
         project2Desc: 'Tüm dijital aboneliklerinizi yönetin, harcamalarınızı takip edin ve yaklaşan ödemelerden haberdar olun.',
-        sampleProject: 'Örnek Proje',
 
+        // Project Detail (full descriptions)
+        project1Subtitle: 'Kapsamlı Stok ve Satış Yönetim Paneli',
+        project1DetailDesc: 'Marketler için özel olarak geliştirilmiş bu web tabanlı uygulama, anlık stok takibi, barkodlu satış sistemi, detaylı raporlama ve kullanıcı yetkilendirme özellikleri sunar. Responsive tasarımı ve PWA desteği sayesinde hem masaüstü hem de mobil cihazlarda sorunsuz çalışır.',
+        project2Subtitle: 'Kişisel Abonelik ve Harcama Yönetimi',
+        project2DetailDesc: 'Tüm dijital aboneliklerinizi tek bir yerden yönetmenizi sağlayan modern bir web uygulaması. Ödeme tarihleri, harcama analizleri ve e-posta bildirimleri ile bütçenizi kontrol altında tutun. Güvenli kimlik doğrulama ve kullanıcı dostu arayüz sunar.',
 
         // Contact Section
         contactTitle: 'İletişime Geç',
@@ -63,6 +67,8 @@ const translations = {
         projDetailFeatures: 'Proje Özellikleri',
         projDetailDate: 'Tarih',
         projDetailRole: 'Rol',
+        projDetailRoleValue: 'Full Stack Geliştirici',
+        projDetailDateValue: 'Ocak 2024',
         projDetailLive: 'Canlı Önizleme',
         projDetailGithub: 'GitHub Reposu',
         projDetailBack: 'Ana Sayfaya Dön',
@@ -71,7 +77,11 @@ const translations = {
         error404Title: 'Sayfa Bulunamadı',
         error404Message: 'Aradığınız sayfa taşınmış, silinmiş veya hiç var olmamış olabilir. Endişelenmeyin, ana sayfaya dönebilirsiniz.',
         error404Home: 'Ana Sayfaya Dön',
-        error404Back: 'Geri Git'
+        error404Back: 'Geri Git',
+
+        // Meta
+        metaDesc: 'Yüksel Yılmaz - Full Stack Geliştirici & UI/UX Tasarımcı. Modern web teknolojileri ile kullanıcı dostu ve estetik dijital deneyimler tasarlıyorum.',
+        metaTitle: 'Yüksel Yılmaz - Full Stack Developer'
     },
     en: {
         // Navbar
@@ -115,8 +125,12 @@ const translations = {
         project1Desc: 'Comprehensive market management panel offering instant stock tracking, sales management, and reporting features.',
         project2Title: 'Subscription Tracking System',
         project2Desc: 'Manage all your digital subscriptions, track expenses, and get notified about upcoming payments.',
-        sampleProject: 'Sample Project',
 
+        // Project Detail (full descriptions)
+        project1Subtitle: 'Comprehensive Stock and Sales Management Panel',
+        project1DetailDesc: 'A web-based application specially developed for markets, offering instant stock tracking, barcode-based sales system, detailed reporting, and user authorization features. With its responsive design and PWA support, it works seamlessly on both desktop and mobile devices.',
+        project2Subtitle: 'Personal Subscription and Expense Management',
+        project2DetailDesc: 'A modern web application that allows you to manage all your digital subscriptions from one place. Keep your budget under control with payment dates, expense analysis, and email notifications. Offers secure authentication and a user-friendly interface.',
 
         // Contact Section
         contactTitle: 'Get In Touch',
@@ -136,6 +150,8 @@ const translations = {
         projDetailFeatures: 'Project Features',
         projDetailDate: 'Date',
         projDetailRole: 'Role',
+        projDetailRoleValue: 'Full Stack Developer',
+        projDetailDateValue: 'January 2024',
         projDetailLive: 'Live Preview',
         projDetailGithub: 'GitHub Repo',
         projDetailBack: 'Back to Home',
@@ -144,34 +160,10 @@ const translations = {
         error404Title: 'Page Not Found',
         error404Message: 'The page you are looking for might have been moved, deleted, or never existed. Don\'t worry, you can go back home.',
         error404Home: 'Go to Home',
-        error404Back: 'Go Back'
+        error404Back: 'Go Back',
+
+        // Meta
+        metaDesc: 'Yüksel Yılmaz - Full Stack Developer & UI/UX Designer. I design user-friendly and aesthetic digital experiences with modern web technologies.',
+        metaTitle: 'Yüksel Yılmaz - Full Stack Developer'
     }
 };
-
-// Language switching function
-function setLanguage(lang) {
-    localStorage.setItem('language', lang);
-    const elements = document.querySelectorAll('[data-translate]');
-
-    elements.forEach(el => {
-        const key = el.getAttribute('data-translate');
-        if (translations[lang] && translations[lang][key]) {
-            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                el.placeholder = translations[lang][key];
-            } else {
-                el.textContent = translations[lang][key];
-            }
-        }
-    });
-
-    // Update language toggle button
-    const langBtn = document.getElementById('lang-toggle');
-    if (langBtn) {
-        langBtn.textContent = lang === 'tr' ? 'EN' : 'TR';
-    }
-}
-
-// Get saved language or default to Turkish
-function getSavedLanguage() {
-    return localStorage.getItem('language') || 'tr';
-}

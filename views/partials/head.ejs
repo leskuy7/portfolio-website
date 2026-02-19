@@ -1,21 +1,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description"
-    content="Yüksel Yılmaz - Full Stack Geliştirici & UI/UX Tasarımcı. Modern web teknolojileri ile kullanıcı dostu ve estetik dijital deneyimler tasarlıyorum.">
+<meta name="description" content="<%= meta && meta.description ? meta.description : t('metaDesc') %>">
 <meta name="keywords" content="Full Stack Developer, Web Geliştirici, React, Node.js, JavaScript, UI/UX, Yüksel Yılmaz">
 <meta name="author" content="Yüksel Yılmaz">
 <meta name="robots" content="index, follow">
 
 <!-- Open Graph / Social Media -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Yüksel Yılmaz - Full Stack Developer">
-<meta property="og:description"
-    content="Modern web teknolojileri ile kullanıcı dostu ve estetik dijital deneyimler tasarlıyorum.">
-<meta property="og:url" content="https://yukselyilmaz.com">
+<meta property="og:title" content="<%= meta && meta.title ? meta.title : t('metaTitle') %>">
+<meta property="og:description" content="<%= meta && meta.description ? meta.description : t('metaDesc') %>">
+<meta property="og:url" content="<%= meta && meta.ogUrl ? meta.ogUrl : 'https://yukselyilmaz.com' %>">
+<meta property="og:image" content="<%= meta && meta.ogImage ? meta.ogImage : '' %>">
 
-<title>
-    <%= typeof title !='undefined' ? title + ' | Yüksel Yılmaz' : 'Yüksel Yılmaz - Full Stack Developer' %>
-</title>
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="<%= meta && meta.title ? meta.title : t('metaTitle') %>">
+<meta name="twitter:description" content="<%= meta && meta.description ? meta.description : t('metaDesc') %>">
+<meta name="twitter:image" content="<%= meta && meta.ogImage ? meta.ogImage : '' %>">
+
+<title><%= meta && meta.title ? meta.title : t('metaTitle') %></title>
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">

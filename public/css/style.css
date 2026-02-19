@@ -96,7 +96,7 @@ html {
 
 .btn-primary-custom {
     background-color: var(--accent-color);
-    border: none;
+    border: 2px solid var(--accent-color);
     padding: 12px 30px;
     font-weight: 600;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -107,6 +107,24 @@ html {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(228, 63, 90, 0.4);
     background-color: #d02e48;
+    border-color: #d02e48;
+}
+
+/* Outline button — hero alanındaki ikinci butonun tutarlılığı için */
+.btn-outline-custom {
+    border: 2px solid white;
+    padding: 12px 30px;
+    font-weight: 600;
+    color: white;
+    background: transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-outline-custom:hover {
+    background-color: white;
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
 }
 
 /* Section Styling */

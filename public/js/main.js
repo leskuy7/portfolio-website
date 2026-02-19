@@ -79,14 +79,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const langToggleBtn = document.getElementById('lang-toggle');
 
     if (langToggleBtn) {
-        // Set initial language
-        const savedLang = getSavedLanguage();
-        setLanguage(savedLang);
-
         langToggleBtn.addEventListener('click', () => {
-            const currentLang = localStorage.getItem('language') || 'tr';
+            // Mevcut dili çerezden oku
+            const currentLang = document.cookie.replace(/(?:(?:^|.*;\s*)lang\s*=\s*([^;]*).*$)|^.*$/, '$1') || 'tr';
             const newLang = currentLang === 'tr' ? 'en' : 'tr';
-            setLanguage(newLang);
+            // Çereze yaz ve sayfayı yeniden yükle — sunucu doğru dilde render edecek
+            document.cookie = `lang=${newLang};path=/;max-age=31536000;SameSite=Lax`;
+            window.location.reload();
         });
     }
 
@@ -155,4 +154,44 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+    // ===== CONTACT FORM (AJAX) =====
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('contact-btn');
+            const alertBox = document.getElementById('contact-alert');
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData.entries());
+
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Gönderiliyor...';
+            alertBox.style.display = 'none';
+
+            try {
+                const res = await fetch('/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await res.json();
+                if (result.success) {
+                    alertBox.className = 'mt-3 alert alert-success';
+                    alertBox.textContent = 'Mesajınız başarıyla gönderildi!';
+                    alertBox.style.display = 'block';
+                    contactForm.reset();
+                } else {
+                    throw new Error(result.error || 'Bir hata oluştu.');
+                }
+            } catch (err) {
+                alertBox.className = 'mt-3 alert alert-danger';
+                alertBox.textContent = err.message || 'Mesaj gönderilemedi, lütfen tekrar deneyin.';
+                alertBox.style.display = 'block';
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Gönder';
+            }
+        });
+    }
 });

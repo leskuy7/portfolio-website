@@ -7,19 +7,19 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto align-items-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="/#home" data-translate="navHome">Ana Sayfa</a>
+                    <a class="nav-link" href="/#home"><%= t('navHome') %></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/#about" data-translate="navAbout">Hakkımda</a>
+                    <a class="nav-link" href="/#about"><%= t('navAbout') %></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/#skills" data-translate="navSkills">Yetenekler</a>
+                    <a class="nav-link" href="/#skills"><%= t('navSkills') %></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/#portfolio" data-translate="navProjects">Projeler</a>
+                    <a class="nav-link" href="/#portfolio"><%= t('navProjects') %></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/#contact" data-translate="navContact">İletişim</a>
+                    <a class="nav-link" href="/#contact"><%= t('navContact') %></a>
                 </li>
                 <!-- Dark Mode & Language Toggle (Same Row) -->
                 <li class="nav-item ms-lg-3 mt-2 mt-lg-0 d-flex align-items-center gap-2">
@@ -27,7 +27,7 @@
                         <i class="fas fa-moon"></i>
                     </button>
                     <button id="lang-toggle" class="btn btn-sm btn-outline-secondary lang-toggle">
-                        EN
+                        <%= lang === 'tr' ? 'EN' : 'TR' %>
                     </button>
                 </li>
             </ul>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="<%= lang %>">
 
 <head>
     <%- include('partials/head') %>
@@ -20,23 +20,19 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6" data-aos="fade-right">
-                        <h1 class="display-4"><span data-translate="heroGreeting">Merhaba, Ben</span> <br><span
-                                class="text-gradient fw-bold" data-translate="heroName">Yüksel</span>
+                        <h1 class="display-4"><%= t('heroGreeting') %> <br><span
+                                class="text-gradient fw-bold"><%= t('heroName') %></span>
                         </h1>
-                        <p class="lead" data-translate="heroTitle">Full Stack Geliştirici & UI/UX Tasarımcı</p>
-                        <p class="mb-4" data-translate="heroDesc">Modern web teknolojileri ile kullanıcı dostu ve
-                            estetik dijital deneyimler
-                            tasarlıyorum.</p>
+                        <p class="lead"><%= t('heroTitle') %></p>
+                        <p class="mb-4"><%= t('heroDesc') %></p>
                         <div class="d-flex-mobile">
-                            <a href="#portfolio" class="btn btn-primary btn-primary-custom me-2"
-                                data-translate="heroBtn1">Projelerimi Gör</a>
-                            <a href="#contact" class="btn btn-outline-light" data-translate="heroBtn2">İletişime Geç</a>
+                            <a href="#portfolio" class="btn btn-primary btn-primary-custom me-2"><%= t('heroBtn1') %></a>
+                            <a href="#contact" class="btn btn-outline-custom"><%= t('heroBtn2') %></a>
                         </div>
                     </div>
                     <div class="col-lg-6 text-center" data-aos="fade-left" data-aos-delay="200">
-                        <!-- Placeholder for hero image -->
                         <img src="https://placehold.co/600x400/png?text=Hero+Image" alt="Hero Image"
-                            class="img-fluid rounded-3 shadow-lg">
+                            class="img-fluid rounded-3 shadow-lg" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -46,41 +42,28 @@
         <section id="about">
             <div class="container">
                 <div class="section-title" data-aos="fade-up">
-                    <h2 data-translate="aboutTitle">Hakkımda</h2>
-                    <p class="text-muted mt-2" data-translate="aboutSubtitle">Kariyer yolculuğum ve tutkularım</p>
+                    <h2><%= t('aboutTitle') %></h2>
+                    <p class="text-muted mt-2"><%= t('aboutSubtitle') %></p>
                 </div>
                 <div class="row align-items-center">
                     <div class="col-lg-5" data-aos="fade-right">
                         <img src="https://placehold.co/500x500/png?text=Profile+Image" alt="Profile"
-                            class="img-fluid profile-img mb-4 mb-lg-0">
+                            class="img-fluid profile-img mb-4 mb-lg-0" loading="lazy">
                     </div>
                     <div class="col-lg-7 ps-lg-5" data-aos="fade-left">
-                        <h3 data-translate="aboutHeading">Yaratıcı Çözümler Üreten Bir Geliştiriciyim</h3>
-                        <p class="mt-4" data-translate="aboutDesc">
-                            4 yıldır web geliştirme alanında çalışıyorum. Node.js, React ve modern web teknolojileri
-                            konusunda uzmanlaştım. Karmaşık problemleri basit ve etkili kod yapılarıyla çözmekten keyif
-                            alıyorum.
-                        </p>
+                        <h3><%= t('aboutHeading') %></h3>
+                        <p class="mt-4"><%= t('aboutDesc') %></p>
                         <div class="row mt-4">
                             <div class="col-md-6">
                                 <ul class="list-unstyled">
-                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i><span
-                                            data-translate="aboutSkill1">Clean Code
-                                            Prensipleri</span></li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i><span
-                                            data-translate="aboutSkill2">Responsive
-                                            Tasarım</span></li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i><%= t('aboutSkill1') %></li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i><%= t('aboutSkill2') %></li>
                                 </ul>
                             </div>
                             <div class="col-md-6">
                                 <ul class="list-unstyled">
-                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i><span
-                                            data-translate="aboutSkill3">SEO
-                                            Optimizasyonu</span>
-                                    </li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i><span
-                                            data-translate="aboutSkill4">Cross-Browser
-                                            Uyumluluk</span></li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i><%= t('aboutSkill3') %></li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i><%= t('aboutSkill4') %></li>
                                 </ul>
                             </div>
                         </div>
@@ -93,7 +76,7 @@
         <section id="skills" class="bg-white">
             <div class="container">
                 <div class="section-title" data-aos="fade-up">
-                    <h2 data-translate="skillsTitle">Uzmanlık Alanlarım</h2>
+                    <h2><%= t('skillsTitle') %></h2>
                 </div>
                 <div class="row">
                     <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
@@ -101,10 +84,8 @@
                             <div class="skill-icon">
                                 <i class="fab fa-node-js"></i>
                             </div>
-                            <h4 data-translate="skillBackend">Backend Geliştirme</h4>
-                            <p class="text-muted" data-translate="skillBackendDesc">Node.js, Express, MongoDB ve SQL
-                                veritabanları ile güçlü altyapılar.
-                            </p>
+                            <h4><%= t('skillBackend') %></h4>
+                            <p class="text-muted"><%= t('skillBackendDesc') %></p>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
@@ -112,9 +93,8 @@
                             <div class="skill-icon">
                                 <i class="fab fa-react"></i>
                             </div>
-                            <h4 data-translate="skillFrontend">Frontend Geliştirme</h4>
-                            <p class="text-muted" data-translate="skillFrontendDesc">React, HTML5, CSS3, Bootstrap ve
-                                Tailwind ile modern arayüzler.</p>
+                            <h4><%= t('skillFrontend') %></h4>
+                            <p class="text-muted"><%= t('skillFrontendDesc') %></p>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
@@ -122,9 +102,8 @@
                             <div class="skill-icon">
                                 <i class="fas fa-mobile-alt"></i>
                             </div>
-                            <h4 data-translate="skillMobile">Mobil Uyumluluk</h4>
-                            <p class="text-muted" data-translate="skillMobileDesc">Her cihazda kusursuz çalışan
-                                responsive tasarımlar.</p>
+                            <h4><%= t('skillMobile') %></h4>
+                            <p class="text-muted"><%= t('skillMobileDesc') %></p>
                         </div>
                     </div>
                 </div>
@@ -135,9 +114,8 @@
         <section id="portfolio" style="background-color: var(--light-bg);">
             <div class="container">
                 <div class="section-title" data-aos="fade-up">
-                    <h2 data-translate="portfolioTitle">Projelerim</h2>
-                    <p class="text-muted mt-2" data-translate="portfolioSubtitle">Son zamanlarda üzerinde çalıştığım
-                        bazı işler</p>
+                    <h2><%= t('portfolioTitle') %></h2>
+                    <p class="text-muted mt-2"><%= t('portfolioSubtitle') %></p>
                 </div>
                 <div class="row">
                     <!-- Project 1 (Market App) -->
@@ -145,10 +123,10 @@
                         <a href="/project/1" class="text-decoration-none text-reset h-100 d-block">
                             <div class="portfolio-card card h-100">
                                 <img src="https://placehold.co/600x400/png?text=Market+Stok+Takip"
-                                    class="card-img-top portfolio-img" alt="Project 1">
+                                    class="card-img-top portfolio-img" alt="<%= t('project1Title') %>" loading="lazy">
                                 <div class="card-body">
-                                    <h5 class="card-title" data-translate="project1Title">Market Stok Takip Sistemi</h5>
-                                    <p class="card-text" data-translate="project1Desc">Anlık stok takibi...</p>
+                                    <h5 class="card-title"><%= t('project1Title') %></h5>
+                                    <p class="card-text"><%= t('project1Desc') %></p>
                                     <span class="badge bg-primary mt-3">Live Demo</span>
                                 </div>
                             </div>
@@ -160,10 +138,10 @@
                         <a href="/project/2" class="text-decoration-none text-reset h-100 d-block">
                             <div class="portfolio-card card h-100">
                                 <img src="https://placehold.co/600x400/png?text=Abonelik+Takip"
-                                    class="card-img-top portfolio-img" alt="Project 2">
+                                    class="card-img-top portfolio-img" alt="<%= t('project2Title') %>" loading="lazy">
                                 <div class="card-body">
-                                    <h5 class="card-title" data-translate="project2Title">Abonelik Takip Sistemi</h5>
-                                    <p class="card-text" data-translate="project2Desc">Kişisel abonelik...</p>
+                                    <h5 class="card-title"><%= t('project2Title') %></h5>
+                                    <p class="card-text"><%= t('project2Desc') %></p>
                                     <span class="badge bg-primary mt-3">Live Demo</span>
                                 </div>
                             </div>
@@ -177,37 +155,36 @@
         <section id="contact">
             <div class="container">
                 <div class="section-title" data-aos="fade-up">
-                    <h2 data-translate="contactTitle">İletişime Geç</h2>
-                    <p class="mt-2 text-white-50" data-translate="contactSubtitle">Projeleriniz veya sorularınız için
-                        bana ulaşın</p>
+                    <h2><%= t('contactTitle') %></h2>
+                    <p class="mt-2 text-white-50"><%= t('contactSubtitle') %></p>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
-                        <form class="contact-form" action="https://formspree.io/f/mvzqnbaz" method="POST">
+                        <form id="contact-form" class="contact-form" novalidate>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <input type="text" name="name" class="form-control" data-translate="contactName"
-                                        placeholder="Adınız Soyadınız" required>
+                                    <input type="text" name="name" class="form-control"
+                                        placeholder="<%= t('contactName') %>" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <input type="email" name="email" class="form-control" data-translate="contactEmail"
-                                        placeholder="E-posta Adresiniz" required>
+                                    <input type="email" name="email" class="form-control"
+                                        placeholder="<%= t('contactEmail') %>" required>
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <input type="text" name="subject" class="form-control" data-translate="contactSubject"
-                                    placeholder="Konu" required>
+                                <input type="text" name="subject" class="form-control"
+                                    placeholder="<%= t('contactSubject') %>" required>
                             </div>
                             <div class="mb-3">
-                                <textarea class="form-control" name="message" rows="5" data-translate="contactMessage"
-                                    placeholder="Mesajınız" required></textarea>
+                                <textarea class="form-control" name="message" rows="5"
+                                    placeholder="<%= t('contactMessage') %>" required></textarea>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary btn-primary-custom px-5">
-                                    <i class="fas fa-paper-plane me-2"></i><span
-                                        data-translate="contactBtn">Gönder</span>
+                                <button type="submit" id="contact-btn" class="btn btn-primary btn-primary-custom px-5">
+                                    <i class="fas fa-paper-plane me-2"></i><%= t('contactBtn') %>
                                 </button>
                             </div>
+                            <div id="contact-alert" class="mt-3" style="display:none;"></div>
                         </form>
 
                         <div class="social-links text-center mt-5" data-aos="fade-up" data-aos-delay="200">

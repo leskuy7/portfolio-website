@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="<%= lang %>">
 
 <head>
     <%- include('partials/head') %>
@@ -28,10 +28,10 @@
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
                         <img src="<%= project.image %>" alt="<%= project.title %>"
-                            class="img-fluid rounded-3 shadow-lg mb-5 w-100">
+                            class="img-fluid rounded-3 shadow-lg mb-5 w-100" loading="lazy">
 
                         <div class="mb-5">
-                            <h3 class="mb-3" data-translate="projDetailAbout">Proje Hakkında</h3>
+                            <h3 class="mb-3"><%= t('projDetailAbout') %></h3>
                             <p class="lead text-muted">
                                 <%= project.description %>
                             </p>
@@ -39,7 +39,7 @@
 
                         <div class="row mb-5">
                             <div class="col-md-6">
-                                <h4 class="mb-3" data-translate="projDetailTech">Kullanılan Teknolojiler</h4>
+                                <h4 class="mb-3"><%= t('projDetailTech') %></h4>
                                 <ul class="list-group list-group-flush">
                                     <% project.technologies.forEach(function(tech) { %>
                                         <li class="list-group-item"><i class="fas fa-check text-primary me-2"></i>
@@ -49,29 +49,24 @@
                                 </ul>
                             </div>
                             <div class="col-md-6">
-                                <h4 class="mb-3" data-translate="projDetailFeatures">Proje Özellikleri</h4>
+                                <h4 class="mb-3"><%= t('projDetailFeatures') %></h4>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><i class="fas fa-calendar text-primary me-2"></i> <span
-                                            data-translate="projDetailDate">Tarih</span>:
-                                        Ocak 2024</li>
-                                    <li class="list-group-item"><i class="fas fa-user text-primary me-2"></i> <span
-                                            data-translate="projDetailRole">Rol</span>: Full
-                                        Stack Geliştirici</li>
+                                    <li class="list-group-item"><i class="fas fa-calendar text-primary me-2"></i> <%= t('projDetailDate') %>:
+                                        <%= t('projDetailDateValue') %></li>
+                                    <li class="list-group-item"><i class="fas fa-user text-primary me-2"></i> <%= t('projDetailRole') %>:
+                                        <%= t('projDetailRoleValue') %></li>
 
                                     <% if (project.liveUrl) { %>
                                         <li class="list-group-item"><i class="fas fa-link text-primary me-2"></i> <a
                                                 href="<%= project.liveUrl %>" target="_blank"
-                                                class="text-decoration-none" data-translate="projDetailLive">Canlı
-                                                Önizleme</a></li>
+                                                class="text-decoration-none"><%= t('projDetailLive') %></a></li>
                                         <% } %>
 
                                             <% if (project.githubUrl) { %>
                                                 <li class="list-group-item"><i
                                                         class="fab fa-github text-primary me-2"></i> <a
                                                         href="<%= project.githubUrl %>" target="_blank"
-                                                        class="text-decoration-none"
-                                                        data-translate="projDetailGithub">GitHub
-                                                        Reposu</a></li>
+                                                        class="text-decoration-none"><%= t('projDetailGithub') %></a></li>
                                                 <% } %>
                                 </ul>
                             </div>
@@ -79,8 +74,7 @@
 
                         <div class="text-center">
                             <a href="/" class="btn btn-outline-primary btn-lg"><i
-                                    class="fas fa-arrow-left me-2"></i><span data-translate="projDetailBack">Ana
-                                    Sayfaya Dön</span></a>
+                                    class="fas fa-arrow-left me-2"></i><%= t('projDetailBack') %></a>
                         </div>
                     </div>
                 </div>
