@@ -109,8 +109,8 @@ app.post('/contact', async (req, res) => {
         });
         res.json({ success: true });
     } catch (err) {
-        console.error('Mail gönderim hatası:', err);
-        res.status(500).json({ success: false, error: 'E-posta gönderilemedi.' });
+        console.error('Mail gönderim hatası:', err.message, err.code, err.response);
+        res.status(500).json({ success: false, error: `E-posta gönderilemedi: ${err.message}` });
     }
 });
 
@@ -135,4 +135,7 @@ app.use((req, res) => {
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
+    console.log(`SMTP_USER: ${process.env.SMTP_USER ? '✓ set' : '✗ MISSING'}`);
+    console.log(`SMTP_PASS: ${process.env.SMTP_PASS ? '✓ set' : '✗ MISSING'}`);
+    console.log(`CONTACT_TO: ${process.env.CONTACT_TO ? '✓ set' : '✗ MISSING'}`);
 });
