@@ -27,7 +27,7 @@ const projects = {
         description: 'Tüm dijital aboneliklerinizi tek bir yerden yönetmenizi sağlayan modern bir web uygulaması. Ödeme tarihleri, harcama analizleri ve e-posta bildirimleri ile bütçenizi kontrol altında tutun. Güvenli kimlik doğrulama ve kullanıcı dostu arayüz sunar.',
         image: 'https://placehold.co/1200x600/png?text=Abonelik+Takip',
         technologies: ['Node.js', 'Express', 'PostgreSQL', 'Prisma', 'JWT', 'React'],
-        liveUrl:"https://frontend-ten-pink-85.vercel.app",
+        liveUrl:"abonelik-kappa.vercel.app",
         githubUrl: 'https://github.com/leskuy7/abonelik'
         
     }
