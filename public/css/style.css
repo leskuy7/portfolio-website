@@ -1,5 +1,4 @@
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+/* Google Fonts — moved to head.ejs as <link> for faster loading */
 
 :root {
     --primary-color: #4a6fa5;
@@ -30,9 +29,14 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     background-color: var(--light-bg);
-    transition: background-color 0.3s ease, color 0.3s ease;
     overflow-x: hidden;
     max-width: 100vw;
+}
+
+/* Only animate during theme toggle — not on every scroll repaint */
+body.theme-transitioning,
+body.theme-transitioning * {
+    transition: background-color 0.3s ease, color 0.3s ease !important;
 }
 
 html {
@@ -41,10 +45,8 @@ html {
 
 /* Navbar */
 .navbar {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.97);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
 }
 
 [data-theme="dark"] .navbar {
@@ -59,7 +61,6 @@ html {
 
 .nav-link {
     font-weight: 500;
-    transition: color 0.3s ease;
     color: var(--text-color);
 }
 
@@ -99,7 +100,7 @@ html {
     border: 2px solid var(--accent-color);
     padding: 12px 30px;
     font-weight: 600;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.2s ease;
     color: white;
 }
 
@@ -117,7 +118,7 @@ html {
     font-weight: 600;
     color: white;
     background: transparent;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .btn-outline-custom:hover {
@@ -173,7 +174,7 @@ section {
     border-radius: 10px;
     padding: 30px;
     text-align: center;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.2s ease;
     background: var(--card-bg);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     margin-bottom: 20px;
@@ -222,7 +223,7 @@ section {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.2s ease;
     background-color: var(--card-bg);
     color: var(--text-color);
 }
@@ -444,8 +445,8 @@ footer {
 /* Card Hover Premium Effect */
 .portfolio-card:hover,
 .skill-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 [data-theme="dark"] .portfolio-card:hover,
@@ -755,7 +756,6 @@ footer {
         visibility: hidden;
         transition: visibility 0s 0.25s, opacity 0.25s ease;
         /* Delay visibility hide */
-        backdrop-filter: blur(10px);
     }
 
     [data-theme="dark"] .navbar-collapse {
@@ -846,13 +846,7 @@ footer {
 }
 
 /* ===== PERFORMANCE OPTIMIZATIONS ===== */
-.hero,
-.skill-card,
-.portfolio-card,
-.scroll-top-btn {
-    will-change: transform;
-}
-
 img {
     content-visibility: auto;
+    contain-intrinsic-size: auto 200px;
 }
