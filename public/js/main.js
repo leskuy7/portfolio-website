@@ -43,22 +43,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ===== AOS ANIMATION INIT =====
-    AOS.init({
-        duration: 800,
-        easing: 'ease-out-cubic',
-        once: true,
-        offset: 50
-    });
+    try {
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-out-cubic',
+                once: true,
+                offset: 50
+            });
+        } else {
+            console.warn('AOS library not found, animations disabled.');
+        }
+    } catch (e) {
+        console.error('Error initializing AOS:', e);
+    }
 
     // ===== LOADING ANIMATION =====
+    // Move this logic to be independent of other initializations
     const loadingOverlay = document.getElementById('loading-overlay');
     if (loadingOverlay) {
-        // Hide loading after page is fully loaded
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                loadingOverlay.classList.add('hidden');
-            }, 500);
-        });
+        const hideLoading = () => {
+            if (!loadingOverlay.classList.contains('hidden')) {
+                setTimeout(() => {
+                    loadingOverlay.classList.add('hidden');
+                }, 500);
+            }
+        };
+
+        // If page is already loaded (fast load / cached)
+        if (document.readyState === 'complete') {
+            hideLoading();
+        } else {
+            // Hide after window fully loads
+            window.addEventListener('load', hideLoading);
+        }
+
+        // Fail-safe: Hide after 3 seconds anyway
+        setTimeout(hideLoading, 3000);
     }
 
     // ===== SCROLL TO TOP =====
