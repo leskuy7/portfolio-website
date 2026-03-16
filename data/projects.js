@@ -19,8 +19,8 @@ module.exports = {
         image: 'https://placehold.co/1200x600/png?text=Abonelik+Takip',
         cardImage: 'https://placehold.co/600x400/png?text=Abonelik+Takip',
         technologies: ['Node.js', 'Express', 'PostgreSQL', 'Prisma', 'JWT', 'React'],
-        liveUrl: 'https://abonelik-kappa.vercel.app',
-        githubUrl: 'https://github.com/leskuy7/abonelik'
+        liveUrl: 'https://subtrack-eta.vercel.app',
+        githubUrl: 'https://github.com/leskuy7/subtrack'
     },
     '3': {
         titleKey: 'project3Title',
