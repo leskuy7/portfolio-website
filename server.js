@@ -14,6 +14,16 @@ const port = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+// Security Headers Middleware
+app.use((req, res, next) => {
+    res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    res.setHeader('X-XSS-Protection', '1; mode=block');
+    res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+    res.setHeader('Permissions-Policy', 'geolocation=(), microphone=(), camera=()');
+    next();
+});
+
 // Middleware
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: false }));
@@ -53,8 +63,8 @@ app.get('/', (req, res) => {
         meta: {
             title: t('metaTitle'),
             description: t('metaDesc'),
-            ogImage: 'https://placehold.co/1200x630/png?text=Yuksel+Yilmaz+Portfolio',
-            ogUrl: 'https://yukselyilmaz.com'
+            ogImage: 'https://yksel.dev/images/hero-image.svg',
+            ogUrl: 'https://yksel.dev'
         }
     });
 });
@@ -70,7 +80,7 @@ app.get('/project/:id', (req, res) => {
                 title: project.title + ' - Yüksel Yılmaz',
                 description: project.description,
                 ogImage: project.image,
-                ogUrl: `https://yukselyilmaz.com/project/${req.params.id}`
+                ogUrl: `https://yksel.dev/project/${req.params.id}`
             }
         });
     } else {

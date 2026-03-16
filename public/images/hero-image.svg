@@ -1,0 +1,68 @@
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#bgGradient)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="550" cy="50" r="80" fill="#3b82f6" opacity="0.1"/>
+  <circle cx="50" cy="350" r="100" fill="#8b5cf6" opacity="0.1"/>
+
+  <!-- Laptop Frame -->
+  <g transform="translate(150, 80)">
+    <!-- Screen -->
+    <rect x="0" y="0" width="300" height="200" rx="8" fill="#334155" stroke="#475569" stroke-width="2"/>
+
+    <!-- Screen content - Code snippets -->
+    <g fill="#10b981" font-family="monospace" font-size="10">
+      <text x="15" y="30">const app = express();</text>
+      <text x="15" y="50" fill="#f59e0b">app.get('/', (req, res) => {</text>
+      <text x="35" y="70">res.render('index')</text>
+      <text x="15" y="90" fill="#f59e0b">})</text>
+      <text x="15" y="120" fill="#3b82f6">// Build amazing things</text>
+      <text x="15" y="150" fill="#ec4899">const [state, setState]</text>
+      <text x="15" y="170">= useState()</text>
+    </g>
+
+    <!-- Screen glow -->
+    <rect x="0" y="0" width="300" height="200" rx="8" fill="none" stroke="url(#accentGradient)" stroke-width="1" opacity="0.5"/>
+
+    <!-- Bezel -->
+    <rect x="-10" y="200" width="320" height="15" rx="2" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+
+    <!-- Base -->
+    <rect x="40" y="215" width="220" height="8" rx="2" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+  </g>
+
+  <!-- Code brackets decoration -->
+  <g stroke="url(#accentGradient)" stroke-width="2" fill="none" stroke-linecap="round">
+    <!-- Left bracket -->
+    <path d="M 80 150 L 100 150 L 100 250 L 80 250" opacity="0.6"/>
+    <!-- Right bracket -->
+    <path d="M 520 150 L 500 150 L 500 250 L 520 250" opacity="0.6"/>
+  </g>
+
+  <!-- Floating elements -->
+  <g fill="#3b82f6" opacity="0.3">
+    <circle cx="100" cy="320" r="6"/>
+    <circle cx="150" cy="340" r="4"/>
+    <circle cx="500" cy="300" r="5"/>
+    <circle cx="550" cy="320" r="3"/>
+  </g>
+
+  <!-- Terminal icon -->
+  <g transform="translate(450, 320)" stroke="#8b5cf6" stroke-width="1.5" fill="none">
+    <rect x="0" y="0" width="80" height="50" rx="3"/>
+    <text x="8" y="25" font-family="monospace" font-size="10" fill="#8b5cf6">>> Full Stack</text>
+    <circle cx="65" cy="12" r="2" fill="#10b981"/>
+  </g>
+</svg>

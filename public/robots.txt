@@ -1,0 +1,13 @@
+# Robots.txt - Yüksel Yılmaz Portfolio
+User-agent: *
+Allow: /
+
+# Disallow admin or sensitive paths (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap
+Sitemap: https://yksel.dev/sitemap.xml
+
+# Crawl delay (seconds)
+Crawl-delay: 1
