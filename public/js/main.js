@@ -53,6 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         } else {
             console.warn('AOS library not found, animations disabled.');
+            // Fallback: make all AOS elements visible
+            document.querySelectorAll('[data-aos]').forEach(el => {
+                el.style.opacity = '1';
+                el.style.transform = 'none';
+                el.style.transition = 'none';
+            });
         }
     } catch (e) {
         console.error('Error initializing AOS:', e);
