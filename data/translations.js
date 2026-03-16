@@ -42,12 +42,20 @@ module.exports = {
         project1Desc: 'Anlık stok takibi, satış yönetimi ve raporlama özellikleri sunan kapsamlı market yönetim paneli.',
         project2Title: 'Abonelik Takip Sistemi',
         project2Desc: 'Tüm dijital aboneliklerinizi yönetin, harcamalarınızı takip edin ve yaklaşan ödemelerden haberdar olun.',
+        project3Title: 'Vardiya Yönetim Sistemi',
+        project3Desc: 'Çalışan vardiyalarını planlayın, yönetin ve takip edin. Otomatik çizelge oluşturma ve onay mekanizması.',
+        project4Title: 'Fikir Platformu',
+        project4Desc: 'Fikirlerinizi paylaşın, oylayın ve tartışın. Topluluk destekli fikir yönetim platformu.',
 
         // Project Detail (full descriptions)
         project1Subtitle: 'Kapsamlı Stok ve Satış Yönetim Paneli',
         project1DetailDesc: 'Marketler için özel olarak geliştirilmiş bu web tabanlı uygulama, anlık stok takibi, barkodlu satış sistemi, detaylı raporlama ve kullanıcı yetkilendirme özellikleri sunar. Responsive tasarımı ve PWA desteği sayesinde hem masaüstü hem de mobil cihazlarda sorunsuz çalışır.',
         project2Subtitle: 'Kişisel Abonelik ve Harcama Yönetimi',
         project2DetailDesc: 'Tüm dijital aboneliklerinizi tek bir yerden yönetmenizi sağlayan modern bir web uygulaması. Ödeme tarihleri, harcama analizleri ve e-posta bildirimleri ile bütçenizi kontrol altında tutun. Güvenli kimlik doğrulama ve kullanıcı dostu arayüz sunar.',
+        project3Subtitle: 'Akıllı Vardiya Planlama ve Yönetim Aracı',
+        project3DetailDesc: 'İşletmeler için geliştirilmiş kapsamlı vardiya yönetim sistemi. Çalışan vardiyalarını otomatik planlama, onay/red mekanizması, çizelge görüntüleme ve bildirim özellikleri sunar. TypeScript ve Next.js ile modern monorepo mimarisinde geliştirilmiştir.',
+        project4Subtitle: 'Topluluk Destekli Fikir Yönetimi',
+        project4DetailDesc: 'Kullanıcıların fikirlerini paylaşabildiği, oylayabildiği ve tartışabildiği modern bir platform. Backend API, responsive frontend ve mobil uygulama desteği ile tam kapsamlı bir çözüm sunar. Docker ile konteynerize edilmiş ve Vercel üzerinde deploy edilmiştir.',
 
         // Contact Section
         contactTitle: 'İletişime Geç',
@@ -125,12 +133,20 @@ module.exports = {
         project1Desc: 'Comprehensive market management panel offering instant stock tracking, sales management, and reporting features.',
         project2Title: 'Subscription Tracking System',
         project2Desc: 'Manage all your digital subscriptions, track expenses, and get notified about upcoming payments.',
+        project3Title: 'Shift Management System',
+        project3Desc: 'Plan, manage, and track employee shifts. Automatic scheduling and approval mechanism.',
+        project4Title: 'Idea Platform',
+        project4Desc: 'Share, vote, and discuss ideas. A community-driven idea management platform.',
 
         // Project Detail (full descriptions)
         project1Subtitle: 'Comprehensive Stock and Sales Management Panel',
         project1DetailDesc: 'A web-based application specially developed for markets, offering instant stock tracking, barcode-based sales system, detailed reporting, and user authorization features. With its responsive design and PWA support, it works seamlessly on both desktop and mobile devices.',
         project2Subtitle: 'Personal Subscription and Expense Management',
         project2DetailDesc: 'A modern web application that allows you to manage all your digital subscriptions from one place. Keep your budget under control with payment dates, expense analysis, and email notifications. Offers secure authentication and a user-friendly interface.',
+        project3Subtitle: 'Smart Shift Planning and Management Tool',
+        project3DetailDesc: 'A comprehensive shift management system developed for businesses. Features automatic shift scheduling, approval/rejection mechanism, schedule viewing, and notifications. Built with TypeScript and Next.js in a modern monorepo architecture.',
+        project4Subtitle: 'Community-Driven Idea Management',
+        project4DetailDesc: 'A modern platform where users can share, vote on, and discuss ideas. Offers a full-stack solution with backend API, responsive frontend, and mobile app support. Containerized with Docker and deployed on Vercel.',
 
         // Contact Section
         contactTitle: 'Get In Touch',
