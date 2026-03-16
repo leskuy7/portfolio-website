@@ -1,0 +1,180 @@
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sidebar" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2332"/>
+      <stop offset="100%" style="stop-color:#0f1923"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#0f172a"/>
+
+  <!-- Sidebar -->
+  <rect width="180" height="500" fill="url(#sidebar)"/>
+
+  <!-- Sidebar Logo -->
+  <rect x="20" y="18" width="30" height="30" rx="8" fill="#10b981"/>
+  <text x="27" y="38" font-family="Arial" font-size="16" font-weight="bold" fill="white">M</text>
+  <text x="58" y="31" font-family="Arial" font-size="13" font-weight="bold" fill="white">Market</text>
+  <text x="58" y="46" font-family="Arial" font-size="10" fill="#64748b">Stok Takip</text>
+
+  <!-- Sidebar Menu Items -->
+  <rect x="12" y="80" width="156" height="36" rx="8" fill="#10b981" opacity="0.15"/>
+  <rect x="30" y="91" width="14" height="14" rx="3" fill="#10b981"/>
+  <text x="52" y="102" font-family="Arial" font-size="12" fill="#10b981" font-weight="600">Dashboard</text>
+
+  <rect x="30" y="136" width="14" height="14" rx="3" fill="#475569" opacity="0.6"/>
+  <text x="52" y="147" font-family="Arial" font-size="12" fill="#94a3b8">Ürünler</text>
+
+  <rect x="30" y="168" width="14" height="14" rx="3" fill="#475569" opacity="0.6"/>
+  <text x="52" y="179" font-family="Arial" font-size="12" fill="#94a3b8">Satışlar</text>
+
+  <rect x="30" y="200" width="14" height="14" rx="3" fill="#475569" opacity="0.6"/>
+  <text x="52" y="211" font-family="Arial" font-size="12" fill="#94a3b8">Raporlar</text>
+
+  <rect x="30" y="232" width="14" height="14" rx="3" fill="#475569" opacity="0.6"/>
+  <text x="52" y="243" font-family="Arial" font-size="12" fill="#94a3b8">Kategoriler</text>
+
+  <!-- Main Content -->
+  <!-- Top Bar -->
+  <rect x="180" y="0" width="620" height="56" fill="#0f172a"/>
+  <rect x="180" y="55" width="620" height="1" fill="#1e293b"/>
+  <text x="200" y="33" font-family="Arial" font-size="16" font-weight="bold" fill="white">Dashboard</text>
+  <text x="200" y="48" font-family="Arial" font-size="10" fill="#64748b">Genel stok durumu</text>
+
+  <!-- Search bar -->
+  <rect x="560" y="14" width="180" height="28" rx="14" fill="#1e293b"/>
+  <text x="578" y="32" font-family="Arial" font-size="11" fill="#475569">🔍 Ürün ara...</text>
+
+  <!-- User avatar -->
+  <circle cx="764" cy="28" r="14" fill="#10b981" opacity="0.2"/>
+  <text x="758" y="33" font-family="Arial" font-size="12" fill="#10b981">YY</text>
+
+  <!-- Stat Cards Row -->
+  <!-- Card 1: Toplam Ürün -->
+  <rect x="200" y="76" width="130" height="80" rx="12" fill="#1e293b"/>
+  <rect x="200" y="76" width="130" height="4" rx="2" fill="#10b981"/>
+  <text x="216" y="104" font-family="Arial" font-size="10" fill="#94a3b8">Toplam Ürün</text>
+  <text x="216" y="128" font-family="Arial" font-size="22" font-weight="bold" fill="white">1,247</text>
+  <text x="300" y="128" font-family="Arial" font-size="10" fill="#10b981">▲ 12%</text>
+
+  <!-- Card 2: Düşük Stok -->
+  <rect x="344" y="76" width="130" height="80" rx="12" fill="#1e293b"/>
+  <rect x="344" y="76" width="130" height="4" rx="2" fill="#f59e0b"/>
+  <text x="360" y="104" font-family="Arial" font-size="10" fill="#94a3b8">Düşük Stok</text>
+  <text x="360" y="128" font-family="Arial" font-size="22" font-weight="bold" fill="white">23</text>
+  <text x="396" y="128" font-family="Arial" font-size="10" fill="#f59e0b">⚠ Dikkat</text>
+
+  <!-- Card 3: Günlük Satış -->
+  <rect x="488" y="76" width="130" height="80" rx="12" fill="#1e293b"/>
+  <rect x="488" y="76" width="130" height="4" rx="2" fill="#6366f1"/>
+  <text x="504" y="104" font-family="Arial" font-size="10" fill="#94a3b8">Günlük Satış</text>
+  <text x="504" y="128" font-family="Arial" font-size="22" font-weight="bold" fill="white">₺8,450</text>
+
+  <!-- Card 4: Gelir -->
+  <rect x="632" y="76" width="148" height="80" rx="12" fill="#1e293b"/>
+  <rect x="632" y="76" width="148" height="4" rx="2" fill="#ef4444"/>
+  <text x="648" y="104" font-family="Arial" font-size="10" fill="#94a3b8">Tükenecek</text>
+  <text x="648" y="128" font-family="Arial" font-size="22" font-weight="bold" fill="white">7</text>
+  <text x="678" y="128" font-family="Arial" font-size="10" fill="#ef4444">Ürün</text>
+
+  <!-- Product Table -->
+  <rect x="200" y="172" width="392" height="310" rx="12" fill="#1e293b"/>
+  <text x="220" y="198" font-family="Arial" font-size="13" font-weight="bold" fill="white">Ürün Listesi</text>
+  <rect x="220" y="208" width="352" height="1" fill="#334155"/>
+
+  <!-- Table Header -->
+  <text x="220" y="228" font-family="Arial" font-size="10" fill="#64748b" font-weight="600">ÜRÜN ADI</text>
+  <text x="380" y="228" font-family="Arial" font-size="10" fill="#64748b" font-weight="600">KATEGORİ</text>
+  <text x="460" y="228" font-family="Arial" font-size="10" fill="#64748b" font-weight="600">STOK</text>
+  <text x="520" y="228" font-family="Arial" font-size="10" fill="#64748b" font-weight="600">FİYAT</text>
+
+  <!-- Row 1 -->
+  <rect x="208" y="234" width="376" height="36" rx="6" fill="#0f172a" opacity="0.5"/>
+  <rect x="216" y="246" width="8" height="8" rx="2" fill="#10b981"/>
+  <text x="230" y="255" font-family="Arial" font-size="11" fill="white">Süt 1L</text>
+  <text x="380" y="255" font-family="Arial" font-size="10" fill="#94a3b8">Süt Ürünleri</text>
+  <text x="460" y="255" font-family="Arial" font-size="11" fill="#10b981">142</text>
+  <text x="510" y="255" font-family="Arial" font-size="11" fill="white">₺24.90</text>
+
+  <!-- Row 2 -->
+  <text x="230" y="291" font-family="Arial" font-size="11" fill="white">Ekmek 500g</text>
+  <rect x="216" y="282" width="8" height="8" rx="2" fill="#f59e0b"/>
+  <text x="380" y="291" font-family="Arial" font-size="10" fill="#94a3b8">Fırın</text>
+  <text x="460" y="291" font-family="Arial" font-size="11" fill="#f59e0b">8</text>
+  <text x="510" y="291" font-family="Arial" font-size="11" fill="white">₺12.50</text>
+
+  <!-- Row 3 -->
+  <rect x="208" y="306" width="376" height="36" rx="6" fill="#0f172a" opacity="0.5"/>
+  <rect x="216" y="318" width="8" height="8" rx="2" fill="#10b981"/>
+  <text x="230" y="327" font-family="Arial" font-size="11" fill="white">Peynir 200g</text>
+  <text x="380" y="327" font-family="Arial" font-size="10" fill="#94a3b8">Süt Ürünleri</text>
+  <text x="460" y="327" font-family="Arial" font-size="11" fill="#10b981">67</text>
+  <text x="510" y="327" font-family="Arial" font-size="11" fill="white">₺89.90</text>
+
+  <!-- Row 4 -->
+  <text x="230" y="363" font-family="Arial" font-size="11" fill="white">Yoğurt 500g</text>
+  <rect x="216" y="354" width="8" height="8" rx="2" fill="#10b981"/>
+  <text x="380" y="363" font-family="Arial" font-size="10" fill="#94a3b8">Süt Ürünleri</text>
+  <text x="460" y="363" font-family="Arial" font-size="11" fill="#10b981">203</text>
+  <text x="510" y="363" font-family="Arial" font-size="11" fill="white">₺34.50</text>
+
+  <!-- Row 5 -->
+  <rect x="208" y="370" width="376" height="36" rx="6" fill="#0f172a" opacity="0.5"/>
+  <rect x="216" y="382" width="8" height="8" rx="2" fill="#ef4444"/>
+  <text x="230" y="391" font-family="Arial" font-size="11" fill="white">Zeytinyağı 1L</text>
+  <text x="380" y="391" font-family="Arial" font-size="10" fill="#94a3b8">Yağlar</text>
+  <text x="460" y="391" font-family="Arial" font-size="11" fill="#ef4444">2</text>
+  <text x="510" y="391" font-family="Arial" font-size="11" fill="white">₺245.00</text>
+
+  <!-- Row 6 -->
+  <text x="230" y="427" font-family="Arial" font-size="11" fill="white">Domates 1kg</text>
+  <rect x="216" y="418" width="8" height="8" rx="2" fill="#10b981"/>
+  <text x="380" y="427" font-family="Arial" font-size="10" fill="#94a3b8">Sebze-Meyve</text>
+  <text x="460" y="427" font-family="Arial" font-size="11" fill="#10b981">89</text>
+  <text x="510" y="427" font-family="Arial" font-size="11" fill="white">₺18.90</text>
+
+  <!-- Row 7 -->
+  <rect x="208" y="434" width="376" height="36" rx="6" fill="#0f172a" opacity="0.5"/>
+  <rect x="216" y="446" width="8" height="8" rx="2" fill="#f59e0b"/>
+  <text x="230" y="455" font-family="Arial" font-size="11" fill="white">Makarna 500g</text>
+  <text x="380" y="455" font-family="Arial" font-size="10" fill="#94a3b8">Kuru Gıda</text>
+  <text x="460" y="455" font-family="Arial" font-size="11" fill="#f59e0b">15</text>
+  <text x="510" y="455" font-family="Arial" font-size="11" fill="white">₺22.00</text>
+
+  <!-- Side Chart Panel -->
+  <rect x="604" y="172" width="176" height="310" rx="12" fill="#1e293b"/>
+  <text x="620" y="198" font-family="Arial" font-size="12" font-weight="bold" fill="white">Stok Dağılımı</text>
+
+  <!-- Donut Chart Visual -->
+  <circle cx="692" cy="268" r="55" fill="none" stroke="#10b981" stroke-width="18" stroke-dasharray="173 173" stroke-dashoffset="0"/>
+  <circle cx="692" cy="268" r="55" fill="none" stroke="#6366f1" stroke-width="18" stroke-dasharray="86 260" stroke-dashoffset="-173"/>
+  <circle cx="692" cy="268" r="55" fill="none" stroke="#f59e0b" stroke-width="18" stroke-dasharray="52 294" stroke-dashoffset="-259"/>
+  <circle cx="692" cy="268" r="55" fill="none" stroke="#ef4444" stroke-width="18" stroke-dasharray="35 311" stroke-dashoffset="-311"/>
+  <text x="680" y="264" font-family="Arial" font-size="14" font-weight="bold" fill="white">1247</text>
+  <text x="676" y="278" font-family="Arial" font-size="10" fill="#94a3b8">ürün</text>
+
+  <!-- Legend -->
+  <rect x="616" y="338" width="10" height="10" rx="2" fill="#10b981"/>
+  <text x="630" y="348" font-family="Arial" font-size="10" fill="#94a3b8">Süt Ür. 40%</text>
+  <rect x="616" y="356" width="10" height="10" rx="2" fill="#6366f1"/>
+  <text x="630" y="366" font-family="Arial" font-size="10" fill="#94a3b8">Kuru G. 20%</text>
+  <rect x="616" y="374" width="10" height="10" rx="2" fill="#f59e0b"/>
+  <text x="630" y="384" font-family="Arial" font-size="10" fill="#94a3b8">Sebze 12%</text>
+  <rect x="616" y="392" width="10" height="10" rx="2" fill="#ef4444"/>
+  <text x="630" y="402" font-family="Arial" font-size="10" fill="#94a3b8">Diğer 28%</text>
+  <rect x="616" y="420" width="148" height="32" rx="8" fill="#10b981" opacity="0.15"/>
+  <text x="646" y="440" font-family="Arial" font-size="11" fill="#10b981" font-weight="600">+ Ürün Ekle</text>
+</svg>
