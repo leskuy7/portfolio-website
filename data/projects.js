@@ -1,4 +1,3 @@
-// Project data - separated from server.js for clean architecture
 module.exports = {
     '1': {
         titleKey: 'project1Title',
@@ -8,7 +7,7 @@ module.exports = {
         image: '/images/project1-market.svg',
         cardImage: '/images/project1-market.svg',
         technologies: ['Node.js', 'Express', 'MongoDB', 'JWT', 'HTML/CSS', 'PWA'],
-        liveUrl: 'https://market-i8nk.onrender.com/',
+        liveUrl: 'https://market-production-f329.up.railway.app/',
         githubUrl: 'https://github.com/leskuy7/market'
     },
     '2': {
