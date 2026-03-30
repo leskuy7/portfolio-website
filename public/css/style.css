@@ -43,7 +43,8 @@ body.theme-transitioning * {
 
 html {
     overflow-x: hidden;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth on root can make wheel / trackpad feel "laggy" at
+       section boundaries; anchor smooth scroll is handled in main.js only */
     -webkit-overflow-scrolling: touch;
 }
 
@@ -845,7 +846,5 @@ footer {
 }
 
 /* ===== PERFORMANCE OPTIMIZATIONS ===== */
-img {
-    content-visibility: auto;
-    contain-intrinsic-size: auto 200px;
-}
+/* Avoid global content-visibility on images: at hero/section edges it can reflow
+   and make native scrolling feel like "scroll more, move less". */

@@ -46,10 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
         if (typeof AOS !== 'undefined') {
             AOS.init({
-                duration: 800,
+                duration: 600,
                 easing: 'ease-out-cubic',
                 once: true,
-                offset: 50
+                offset: 80,
+                throttleDelay: 99
             });
         } else {
             console.warn('AOS library not found, animations disabled.');
