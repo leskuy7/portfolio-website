@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const compression = require('compression');
 const cookieParser = require('cookie-parser');
 const { Resend } = require('resend');
 const path = require('path');
@@ -14,6 +15,9 @@ const port = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+// Gzip/Brotli compression — büyük bandwidth tasarrufu
+app.use(compression());
+
 // Security Headers Middleware
 app.use((req, res, next) => {
     res.setHeader('X-Frame-Options', 'SAMEORIGIN');
@@ -24,8 +28,17 @@ app.use((req, res, next) => {
     next();
 });
 
-// Middleware
-app.use(express.static(path.join(__dirname, 'public')));
+// Static files — long-lived cache for assets (1 yıl, immutable)
+app.use(express.static(path.join(__dirname, 'public'), {
+    maxAge: '1y',
+    etag: true,
+    lastModified: true,
+    setHeaders: (res, filePath) => {
+        if (/\.(css|js|woff2?|ttf|eot|svg|png|jpe?g|webp|avif|ico)$/i.test(filePath)) {
+            res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+        }
+    }
+}));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
