@@ -42,52 +42,26 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => document.body.classList.remove('theme-transitioning'), 350);
     });
 
-    // ===== AOS ANIMATION INIT =====
-    try {
-        if (typeof AOS !== 'undefined') {
-            AOS.init({
-                duration: 600,
-                easing: 'ease-out-cubic',
-                once: true,
-                offset: 80,
-                throttleDelay: 99
+    // ===== REVEAL ON SCROLL (native, replaces AOS) =====
+    const revealEls = document.querySelectorAll('[data-aos]');
+    if (revealEls.length && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
             });
-        } else {
-            console.warn('AOS library not found, animations disabled.');
-            // Fallback: make all AOS elements visible
-            document.querySelectorAll('[data-aos]').forEach(el => {
-                el.style.opacity = '1';
-                el.style.transform = 'none';
-                el.style.transition = 'none';
-            });
-        }
-    } catch (e) {
-        console.error('Error initializing AOS:', e);
+        }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+        revealEls.forEach(el => io.observe(el));
+    } else {
+        // Fallback: show everything immediately
+        revealEls.forEach(el => el.classList.add('revealed'));
     }
 
-    // ===== LOADING ANIMATION =====
-    // Move this logic to be independent of other initializations
+    // Remove loading overlay immediately if still present
     const loadingOverlay = document.getElementById('loading-overlay');
-    if (loadingOverlay) {
-        const hideLoading = () => {
-            if (!loadingOverlay.classList.contains('hidden')) {
-                setTimeout(() => {
-                    loadingOverlay.classList.add('hidden');
-                }, 500);
-            }
-        };
-
-        // If page is already loaded (fast load / cached)
-        if (document.readyState === 'complete') {
-            hideLoading();
-        } else {
-            // Hide after window fully loads
-            window.addEventListener('load', hideLoading);
-        }
-
-        // Fail-safe: Hide after 3 seconds anyway
-        setTimeout(hideLoading, 3000);
-    }
+    if (loadingOverlay) loadingOverlay.remove();
 
     // ===== SCROLL TO TOP =====
     const scrollTopBtn = document.getElementById('scroll-top');
